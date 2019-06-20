@@ -7,36 +7,50 @@ class QuizPage extends React.Component {
     super()
 
     this.state = { quiz: [] }
+
+    this.showAnswer = this.showAnswer.bind(this)
+    this.nextQuestion = this.nextQuestion.bind(this)
   }
 
   componentDidMount() {
     axios.get('https://opentdb.com/api.php?amount=50&category=11&type=multiple&difficulty=easy')
-      .then(res => this.setState({ quiz: res.data.results }))
+      .then(res => this.setState({ quiz: res.data.results }, () => this.random()))
       .catch(err => console.log(err))
   }
 
   random() {
+    console.log('running')
     const questions = this.state.quiz
-    return questions[Math.floor(Math.random() * questions.length)]
+    const currentQuestion = questions[Math.floor(Math.random() * questions.length)]
+    const answers = [...currentQuestion.incorrect_answers, currentQuestion.correct_answer]
+    this.setState({ currentQuestion, answers })
   }
 
   showAnswer(e) {
     e.preventDefault()
-    console.log('clicked!')
+    if (e.target.value === this.state.currentQuestion.correct_answer ) {
+      const right = 'Right'
+      this.setState({ right })
+    } else {
+      const wrong = 'Wrong'
+      this.setState({ wrong })
+    }
+  }
+
+  nextQuestion(e) {
+    e.preventDefault()
+    this.random()
   }
 
 
   render() {
-    if (!this.state.quiz.length) return null
-    const questionAnswer = this.random()
-    const answers = [...questionAnswer.incorrect_answers, questionAnswer.correct_answer]
-    console.log(answers)
-    console.log(questionAnswer)
+    if (!this.state.quiz || !this.state.currentQuestion || !this.state.answers) return null
+    const { currentQuestion, answers, right, wrong } = this.state
     return (
       <main>
         <div>
           Question:
-          {questionAnswer.question}
+          {currentQuestion.question}
         </div>
         <div>
           Answers:
@@ -45,6 +59,8 @@ class QuizPage extends React.Component {
             </button>
           ))}
         </div>
+        <div>{ right }{ wrong }</div>
+        <button onClick={this.nextQuestion}>Next Question</button>
       </main>
     )
   }
