@@ -1,1 +1,18 @@
 
+
+section.hero {
+  .hero-body {
+    background-image: url('../assets/hollywood.jpeg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: center;
+    .home-title {
+
+    }
+    .button {
+      display: block;
+    }
+  }
+}
