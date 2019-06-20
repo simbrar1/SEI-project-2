@@ -9,9 +9,11 @@ class QuizPage extends React.Component {
     super()
 
     this.state = { quiz: [], counter: 0 }
+    this.score = 0
 
     this.showAnswer = this.showAnswer.bind(this)
     this.nextQuestion = this.nextQuestion.bind(this)
+    this.reset = this.reset.bind(this)
   }
 
   componentDidMount() {
@@ -32,6 +34,7 @@ class QuizPage extends React.Component {
     if (e.target.value === this.state.currentQuestion.correct_answer ) {
       const result = 'Right'
       this.setState({ result })
+      this.score += 1
     } else {
       const result = 'Wrong'
       this.setState({ result })
@@ -48,8 +51,9 @@ class QuizPage extends React.Component {
     this.setState({ counter })
   }
 
-  score() {
-    
+  reset() {
+    this.setState({ counter: 0 })
+    this.score = 0
   }
 
 
@@ -78,8 +82,10 @@ class QuizPage extends React.Component {
         {this.state.counter === 10 &&
           <Results
             score={this.state.score}
+            reset={this.reset}
           />
         }
+        <h1>{this.score}</h1>
       </main>
     )
   }

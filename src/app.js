@@ -1,13 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Route, BrowserRouter, Switch } from 'react-router-dom'
-
 import 'bulma'
 import './styles/style.scss'
 
 import Home from './components/Home'
 import QuizPage from './components/QuizPage'
-
 
 const App = () => {
   return(
