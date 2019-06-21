@@ -29,6 +29,7 @@ section.hero {
   margin-left: 45%;
   margin-top: 0;
   font-size: 30px;
+  animation: pulse 1s infinite;
 }
 
 .card {
@@ -36,7 +37,7 @@ section.hero {
 }
 
 .result {
-  margin-left: 46%;
+  margin-left: 45%;
   margin-top: 0;
   font-size: 40px;
 }
@@ -55,4 +56,16 @@ html {
 .result-title {
   text-align: center;
   font-size: 35px;
+}
+
+.show-result {
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
+}
+
+.play-again {
+  margin-left: 45%;
+
+
 }

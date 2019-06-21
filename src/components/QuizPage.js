@@ -93,7 +93,7 @@ class QuizPage extends React.Component {
 
         {this.state.counter === 1 &&
               <Results
-                score={this.state.score}
+                score={this.score}
                 reset={this.reset}
               />
         }
