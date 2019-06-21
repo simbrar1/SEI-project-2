@@ -3,30 +3,59 @@ import axios from 'axios'
 
 import Results from './Results'
 
+const Entities = require('html-entities').XmlEntities
+const entities = new Entities()
+
 
 class QuizPage extends React.Component {
   constructor() {
     super()
 
-    this.state = { quiz: [], counter: 0 }
+    this.state = { quiz: [], counter: 0, gameMode: null  }
     this.score = 0
 
     this.showAnswer = this.showAnswer.bind(this)
     this.nextQuestion = this.nextQuestion.bind(this)
+    this.playEasy = this.playEasy.bind(this)
+    this.playHard = this.playHard.bind(this)
     this.reset = this.reset.bind(this)
   }
 
-  componentDidMount() {
-    axios.get('https://opentdb.com/api.php?amount=50&category=11&type=multiple&difficulty=easy')
+
+  playEasy() {
+    this.setState({ gameMode: 'easy' }, () => this.getData())
+  }
+
+  playHard() {
+    this.setState({ gameMode: 'medium' }, () => this.getData())
+  }
+
+  getData() {
+    axios.get(`https://opentdb.com/api.php?amount=50&category=11&type=multiple&difficulty=${this.state.gameMode}`)
       .then(res => this.setState({ quiz: res.data.results }, () => this.random()))
       .catch(err => console.log(err))
   }
 
+
   random() {
     const questions = this.state.quiz
     const currentQuestion = questions[Math.floor(Math.random() * questions.length)]
-    const answers = [...currentQuestion.incorrect_answers, currentQuestion.correct_answer]
+    const answers = this.shuffle([...currentQuestion.incorrect_answers, currentQuestion.correct_answer])
     this.setState({ currentQuestion, answers })
+  }
+
+  shuffle(array) {
+    let currentIndex = array.length, temporaryValue, randomIndex
+    while (0 !== currentIndex) {
+
+      randomIndex = Math.floor(Math.random() * currentIndex)
+      currentIndex -= 1
+
+      temporaryValue = array[currentIndex]
+      array[currentIndex] = array[randomIndex]
+      array[randomIndex] = temporaryValue
+    }
+    return array
   }
 
   showAnswer(e) {
@@ -58,11 +87,20 @@ class QuizPage extends React.Component {
 
 
   render() {
+    if (!this.state.gameMode) {
+      return(
+        <main>
+          <h1 className="d"> Please choose your difficulty level </h1>
+          <button className="easy button is-large is-warning" onClick={this.playEasy}>Easy</button>
+          <button className="hard button is-large is-danger" onClick={this.playHard}>Hard</button>
+        </main>
+      )
+    }
     if (!this.state.quiz || !this.state.currentQuestion || !this.state.answers) return null
     const { currentQuestion, answers, result } = this.state
     return (
       <main>
-        {this.state.counter < 1 &&
+        {this.state.counter < 10 &&
           <div>
             <div className="card">
               <header className="card-header">
@@ -72,18 +110,18 @@ class QuizPage extends React.Component {
               </header>
               <div className="card-content">
                 <div className="content">
-                  {currentQuestion.question}
+                  {entities.decode(currentQuestion.question)}
                 </div>
               </div>
               <div className="card-footer">
                 {answers.map((answer, i) => (
-                  <button className="card-footer-item" onClick={this.showAnswer} key={i} value={answer} type="submit">{answer}
+                  <button className="card-footer-item" onClick={this.showAnswer} key={i} value={entities.decode(answer)} type="submit">{entities.decode(answer)}
                   </button>
                 ))}
               </div>
             </div>
             <div className="container">
-              {this.state.counter < 1 && <button className="next button is-small is-danger" onClick={this.nextQuestion}>Next Question
+              {this.state.counter < 10 && <button className="next button is-danger is-outlined" onClick={this.nextQuestion}>Next Question
               </button>}
             </div>
             <div className="result">{ result }</div>
@@ -91,7 +129,7 @@ class QuizPage extends React.Component {
           </div>
         }
 
-        {this.state.counter === 1 &&
+        {this.state.counter === 10 &&
               <Results
                 score={this.score}
                 reset={this.reset}

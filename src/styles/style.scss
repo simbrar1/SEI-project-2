@@ -26,10 +26,10 @@ section.hero {
 }
 
 .score {
-  margin-left: 45%;
+  margin-left: 46%;
   margin-top: 0;
   font-size: 30px;
-  animation: pulse 1s infinite;
+  animation: heartBeat 2s infinite;
 }
 
 .card {
@@ -37,7 +37,7 @@ section.hero {
 }
 
 .result {
-  margin-left: 45%;
+  margin-left: 46%;
   margin-top: 0;
   font-size: 40px;
 }
@@ -50,7 +50,7 @@ section.hero {
 
 html {
   height: 100vh;
-  background: cornsilk;
+  background: pink;
 }
 
 .result-title {
@@ -60,12 +60,27 @@ html {
 
 .show-result {
   text-align: center;
-  font-size: 30px;
+  font-size: 50px;
   padding: 10px;
 }
 
 .play-again {
   margin-left: 45%;
+}
 
+.easy {
+  margin-left: 39%;
+  margin-top: 6%;
+}
+.hard {
+  margin-right: 40%;
+  margin-top: 6%;
+}
 
+.d {
+  font-size: 42px;
+  text-align: center;
+  margin-top: 17%;
+  font-weight: bold;
+  color: navy;
 }
