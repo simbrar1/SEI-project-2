@@ -9,15 +9,14 @@ section.hero {
     align-content: space-between;
     justify-content: center;
     .home-title {
-
+    margin-bottom: 35%;
+    color: white;
     }
     .button {
       display: block;
     }
   }
 }
-
-
 
 
 .next {
@@ -27,8 +26,9 @@ section.hero {
 }
 
 .score {
-  margin-left: 47%;
+  margin-left: 45%;
   margin-top: 0;
+  font-size: 30px;
 }
 
 .card {
@@ -39,4 +39,20 @@ section.hero {
   margin-left: 46%;
   margin-top: 0;
   font-size: 40px;
+}
+
+.home-footer {
+  text-align: center;
+  color: white;
+  background: midnightblue;
+}
+
+html {
+  height: 100vh;
+  background: cornsilk;
+}
+
+.result-title {
+  text-align: center;
+  font-size: 35px;
 }

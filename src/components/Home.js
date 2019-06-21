@@ -10,8 +10,9 @@ class Home extends React.Component {
           <p className="home-title title is-1 ">
       Movie Quiz
           </p>
-          <Link to="/quiz" className="button is-large is-warning">Start</Link>
+          <Link to="/quiz" className="button is-medium is-white">Start</Link>
         </div>
+        <footer className="home-footer">Amy & Sim &hearts;</footer>
       </section>
     )
   }

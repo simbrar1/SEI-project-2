@@ -62,8 +62,8 @@ class QuizPage extends React.Component {
     const { currentQuestion, answers, result } = this.state
     return (
       <main>
-        <div>
-          {this.state.counter < 10 &&
+        {this.state.counter < 1 &&
+          <div>
             <div className="card">
               <header className="card-header">
                 <p className="card-header-title">
@@ -82,16 +82,16 @@ class QuizPage extends React.Component {
                 ))}
               </div>
             </div>
-          }
-          <div className="container">
-            <button className="next button is-small is-danger" onClick={this.nextQuestion}>Next Question
-            </button>
+            <div className="container">
+              {this.state.counter < 1 && <button className="next button is-small is-danger" onClick={this.nextQuestion}>Next Question
+              </button>}
+            </div>
+            <div className="result">{ result }</div>
+            <h1 className="score">Score: {this.score}</h1>
           </div>
-          <div className="result">{ result }</div>
-          <h1 className="score">Score: {this.score}</h1>
-        </div>
+        }
 
-        {this.state.counter === 10 &&
+        {this.state.counter === 1 &&
               <Results
                 score={this.state.score}
                 reset={this.reset}
