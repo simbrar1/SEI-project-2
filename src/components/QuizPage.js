@@ -62,33 +62,78 @@ class QuizPage extends React.Component {
     const { currentQuestion, answers, result } = this.state
     return (
       <main>
-        {this.state.counter < 10 &&
-          <div>
-            <div>
-              Question:
-              {currentQuestion.question}
+        <div>
+          {this.state.counter < 10 &&
+            <div className="card">
+              <header className="card-header">
+                <p className="card-header-title">
+                  Question
+                </p>
+              </header>
+              <div className="card-content">
+                <div className="content">
+                  {currentQuestion.question}
+                </div>
+              </div>
+              <div className="card-footer">
+                {answers.map((answer, i) => (
+                  <button className="card-footer-item" onClick={this.showAnswer} key={i} value={answer} type="submit">{answer}
+                  </button>
+                ))}
+              </div>
             </div>
-            <div>
-            Answers:
-              {answers.map((answer, i) => (
-                <button onClick={this.showAnswer} key={i} value={answer} type="submit">{answer}
-                </button>
-              ))}
-            </div>
-            <div>{ result }</div>
-            <button onClick={this.nextQuestion}>Next Question</button>
+          }
+          <div className="container">
+            <button className="next button is-small is-danger" onClick={this.nextQuestion}>Next Question
+            </button>
           </div>
-        }
+          <div className="result">{ result }</div>
+          <h1 className="score">Score: {this.score}</h1>
+        </div>
+
         {this.state.counter === 10 &&
-          <Results
-            score={this.state.score}
-            reset={this.reset}
-          />
+              <Results
+                score={this.state.score}
+                reset={this.reset}
+              />
         }
-        <h1>{this.score}</h1>
       </main>
     )
   }
 }
 
 export default QuizPage
+
+
+// if (!this.state.quiz || !this.state.currentQuestion || !this.state.answers) return null
+//     const { currentQuestion, answers, result } = this.state
+//     return (
+//       <main>
+//         {this.state.counter < 10 &&
+//           <div>
+//             <div>
+//               Question:
+//               {currentQuestion.question}
+//             </div>
+//             <div>
+//             Answers:
+//               {answers.map((answer, i) => (
+//                 <button onClick={this.showAnswer} key={i} value={answer} type="submit">{answer}
+//                 </button>
+//               ))}
+//             </div>
+//             <div>{ result }</div>
+//             <button onClick={this.nextQuestion}>Next Question</button>
+//           </div>
+//         }
+//         {this.state.counter === 10 &&
+//           <Results
+//             score={this.state.score}
+//             reset={this.reset}
+//           />
+//         }
+//         <h1>{this.score}</h1>
+//       </main>
+//     )
+//   }
+// }

@@ -2,7 +2,7 @@
 
 section.hero {
   .hero-body {
-    background-image: url('../assets/hollywood.jpeg');
+    background-image: url('../assets/giphy.gif');
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -15,4 +15,28 @@ section.hero {
       display: block;
     }
   }
+}
+
+
+
+
+.next {
+  margin-left: 45%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.score {
+  margin-left: 47%;
+  margin-top: 0;
+}
+
+.card {
+  margin: 100px 300px 60px ;
+}
+
+.result {
+  margin-left: 46%;
+  margin-top: 0;
+  font-size: 40px;
 }
