@@ -31,6 +31,7 @@ class QuizPage extends React.Component {
   }
 
   getData() {
+    console.log('this happened')
     axios.get(`https://opentdb.com/api.php?amount=50&category=11&type=multiple&difficulty=${this.state.gameMode}`)
       .then(res => this.setState({ quiz: res.data.results }, () => this.random()))
       .catch(err => console.log(err))
@@ -141,37 +142,3 @@ class QuizPage extends React.Component {
 }
 
 export default QuizPage
-
-
-// if (!this.state.quiz || !this.state.currentQuestion || !this.state.answers) return null
-//     const { currentQuestion, answers, result } = this.state
-//     return (
-//       <main>
-//         {this.state.counter < 10 &&
-//           <div>
-//             <div>
-//               Question:
-//               {currentQuestion.question}
-//             </div>
-//             <div>
-//             Answers:
-//               {answers.map((answer, i) => (
-//                 <button onClick={this.showAnswer} key={i} value={answer} type="submit">{answer}
-//                 </button>
-//               ))}
-//             </div>
-//             <div>{ result }</div>
-//             <button onClick={this.nextQuestion}>Next Question</button>
-//           </div>
-//         }
-//         {this.state.counter === 10 &&
-//           <Results
-//             score={this.state.score}
-//             reset={this.reset}
-//           />
-//         }
-//         <h1>{this.score}</h1>
-//       </main>
-//     )
-//   }
-// }
