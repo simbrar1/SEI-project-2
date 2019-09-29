@@ -81,6 +81,7 @@ random() {
 ```
 
 Finally after 10 questions you will reach the result page where you will see the score, here the user will also have the option to play the game again.
+
 <img src="src/assets/shot4.png" />
 ---
 
