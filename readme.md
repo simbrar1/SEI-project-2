@@ -41,7 +41,7 @@ Once the API had been chosen we read the documentation in how to receive the dat
 
 ## User Journey
 
-
+Screen Shot 2019-09-29 at 10.10.52 am
 Opens with the home page asking the user to start the Quiz
 * photo 2
 Next the user is asked what difficulty level they would like to do the quiz in. The options are either easy or hard
