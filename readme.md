@@ -2,14 +2,12 @@
 
 ## Overview
 
-This project was to work in a pair to **build a React application** that consumed a **public API**, this project was also known as a Reactathon.
+This project was to work in a pair to **build a React application** that consumed a **public API**, this project was also known as a Reactathon. This project was made in collaboration with Amy Wilson (github.com/amydaniellewilson).
 
 Click to view the live version of the app --->
 **[Movie Quiz](https://moviequiz.herokuapp.com/)**
 
 ### Technical Requirements
-
-Your app must:
 
 * Consume a public API – this could be anything but it must make sense for your project.
 * Have several components - At least one classical and one functional.
@@ -18,34 +16,43 @@ Your app must:
 
 ---
 
-## Necessary Deliverables
+### Technologies used
 
-* A **working application**, hosted somewhere on the internet
-* A **link to your hosted working app** in the URL section of your Github repo
-* A **git repository hosted on Github**, with a link to your hosted project, and frequent commits dating back to the _very beginning_ of the project
+* JavaScript (ES6) / HTML5 / CSS
+* JavaScript ES6
+* React.js (Framework)
+* Consumes the OpenTDB via the HTTP client Axios
+* Git
+* gitHub
+* Bulma
 
----
 
-## Suggested Ways to Get Started
+### Timeframe
 
-* **Sign Off** Before starting you must get your project idea signed off by an Instructor/TA, sign off wil require a basic wireframe and working Insomnia request to your chosen API.
-* **Don’t hesitate to write throwaway code** to solve short term problems.
-* **Read the docs for whatever technologies / frameworks / APIs you use**.
-* **Write DRY code**.
-* **Be consistent with your code style.**
-* **Commit early, commit often.** Don’t be afraid to break something because you can always go back in time to a previous version.
-* **Keep user stories small and well-defined**, and remember – user stories focus on what a user needs, not what development tasks need accomplishing.
-* **Write code another developer wouldn't have to ask you about**. Do your naming conventions make sense? Would another developer be able to look at your app and understand what everything is?
-* **Make it all well-formatted.** Are you indenting, consistently? Can we find the start and end of every div, curly brace, etc?
-* **Comment your code.** Will someone understand what is going on in each block or function? Even if it's obvious, explaining the what & why means someone else can pick it up and get it.
-* **Write pseudocode before you write actual code.** Thinking through the logic of something helps.
+1 1/2 days
 
 ---
 
-## Useful Resources
+## The Approach
 
-* **[React](https://reactjs.org/)**
-*  **[Public APIs @ Programmable Web](https://www.programmableweb.com/)**
+Once the API had been chosen we read the documentation in how to receive the data. There are 2 levels for the quiz "easy" and "hard, we decided that we would focus on just retreaving the data for easy, and once that was accomplished then to move onto the hard levels. Each GET request returned 50 questions per each difficulty level therefore we chose to make the quiz out of 10 so there wont be much repetition for frequent users of the quiz. 
+
+---
+
+## User Journey
+
+
+Opens with the home page asking the user to start the Quiz
+* photo 2
+Next the user is asked what difficulty level they would like to do the quiz in. The options are either easy or hard
+* photo 3
+When playing the game the question will appear on the screen with 4 possible answers at the bottom. The user makes a decision on which answer they think is right and if they are correct their score either increases or stays the same.
+* photo 4
+The last photo the end of the game final score which is out of 10. There is also another option to play again.
+
+---
+
+#
 
 ---
 
