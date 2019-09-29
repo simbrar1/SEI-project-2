@@ -34,7 +34,7 @@ Click to view the live version of the app --->
 
 ## The Approach
 
-Once the API had been chosen we read the documentation in how to receive the data. There are 2 levels for the quiz "easy" and "hard, we decided that we would focus on just retrieving the data for easy, and once that was accomplished then to move onto the hard levels. Each GET request returned 50 questions per each difficulty level therefore we chose to make the quiz out of 10 so there wont be much repetition for frequent users of the quiz. The documentation for the API https://opentdb.com/api_config.php
+Once the API had been chosen we read the documentation in how to receive the data. There are 2 levels for the quiz "easy" and "hard", we decided that we would focus on just retrieving the data for easy, and once that was accomplished then to move onto the hard levels. Each GET request returned 50 questions per each difficulty level therefore we chose to make the quiz out of 10 so there wont be much repetition for frequent users of the quiz. The documentation for the API https://opentdb.com/api_config.php
 
 ---
 
