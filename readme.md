@@ -33,13 +33,13 @@ Click to view the live version of the app --->
 
 ## The Approach
 
-Once the API had been chosen we read the documentation in how to receive the data. There are 2 levels for the quiz "easy" and "hard, we decided that we would focus on just retreaving the data for easy, and once that was accomplished then to move onto the hard levels. Each GET request returned 50 questions per each difficulty level therefore we chose to make the quiz out of 10 so there wont be much repetition for frequent users of the quiz.
+Once the API had been chosen we read the documentation in how to receive the data. There are 2 levels for the quiz "easy" and "hard, we decided that we would focus on just retrieving the data for easy, and once that was accomplished then to move onto the hard levels. Each GET request returned 50 questions per each difficulty level therefore we chose to make the quiz out of 10 so there wont be much repetition for frequent users of the quiz.
 
 ---
 
 ## User Journey
 
-<img src="./assets/screenshot1.png" />
+<img src="../../assets/screenshot1.png" />
 Opens with the home page asking the user to start the Quiz
 
 ![Alt text]("screenshot1.png")
