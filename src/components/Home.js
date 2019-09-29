@@ -12,7 +12,7 @@ class Home extends React.Component {
           </p>
           <Link to="/quiz" className="button is-medium is-white">Start</Link>
         </div>
-        <footer className="home-footer">Amy & Sim &hearts;</footer>
+        <footer className="home-footer">Sim & Amy &hearts;</footer>
       </section>
     )
   }
@@ -21,8 +21,3 @@ class Home extends React.Component {
 
 
 export default Home
-
-
-// <div>
-//   <audio className="song" src="../assets/20th Century Fox Intro Full-HD 1080p.mp3"></audio>
-// </div>
