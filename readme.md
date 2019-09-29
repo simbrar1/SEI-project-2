@@ -2,18 +2,19 @@
 
 ## Overview
 
-The second project is to, working as a small group, **build a React application** that consumes a **public API**.
+This project was to work in a pair to **build a React application** that consumed a **public API**, this project was also known as a Reactathon.
+
+Click to view the live version of the app --->
+**[Movie Quiz](https://moviequiz.herokuapp.com/)**
 
 ### Technical Requirements
 
 Your app must:
 
-* **Consume a public API** – this could be anything but it must make sense for your project.
-* **Have several components** - At least one classical and one functional.
-* **The app can include a router** - with several "pages".
-* **Include wireframes** - that you designed before building the app.
-* Have **semantically clean HTML** - you make sure you write HTML that makes structural sense rather than thinking about how it might look, which is the job of CSS.
-* **Be deployed online** and accessible to the public. (We will cover how to do this next week, not required on first deadline)
+* Consume a public API – this could be anything but it must make sense for your project.
+* Have several components - At least one classical and one functional.
+* The app can include a router - with several "pages".
+* Be deployed online and accessible to the public.
 
 ---
 
