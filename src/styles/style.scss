@@ -1,19 +1,22 @@
-
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 
 section.hero {
+  display: flex;
   .hero-body {
-    background-image: url('../assets/giphy.gif');
+    background-image: url('../assets/film1.jpeg');
     background-size: cover;
     display: flex;
     flex-direction: column;
     align-content: space-between;
-    justify-content: center;
-    .home-title {
-    margin-bottom: 35%;
-    color: white;
-    }
-    .button {
-      display: block;
+    justify-content: flex-start;
+    .start {
+      display: flex;
+      font-family: 'Quicksand', sans-serif;
+      color: white;
+      font-size: 100px;
+      // background: white;
+      border-radius: 12px;
+      font-weight: bold;
     }
   }
 }
